@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">MantuApp</string>
+    <string name="app_name">Mantoo</string>
+    <string name="halo_selamat_datang_di_mantoo">Halo, selamat datang di Mantoo</string>
+    <string name="siapa_nama_kamu">Siapa nama kamu ?</string>
+    <string name="hello_world">Hello World</string>
+    <string name="welcome_messages">Halo, %1$s! \nSelamat Datang di Mantoo.</string>
 </resources>
