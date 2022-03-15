@@ -4,4 +4,10 @@
     <string name="siapa_nama_kamu">Siapa nama kamu ?</string>
     <string name="hello_world">Hello World</string>
     <string name="welcome_messages">Halo, %1$s! \nSelamat Datang di Mantoo.</string>
+    <string name="hello_world_this_is_temporary_text_view">Hello World, this is temporary text view</string>
+    <string name="task_hari_ini">Task Hari Ini</string>
+    <string name="lihat_semua">Lihat Semua</string>
+    <string name="task_category">Task Category</string>
+    <string name="task_title">Task Title</string>
+    <string name="kamu_punya_0_hari_ini">Kamu punya 0 hari ini</string>
 </resources>

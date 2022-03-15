@@ -38,4 +38,10 @@ class HomeFragment: Fragment() {
         }
     }
 
+    private fun getAllTaskData() {
+        homeViewModel.getAllTask().observe(viewLifecycleOwner) { task ->
+
+        }
+    }
+
 }

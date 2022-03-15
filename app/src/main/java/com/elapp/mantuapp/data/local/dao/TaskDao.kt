@@ -9,7 +9,7 @@ interface TaskDao {
     @Insert
     suspend fun insertNewTask(task: Task)
 
-    @Query("SELECT * FROM tbl_task")
+    @Query("SELECT * FROM  tbl_task")
     suspend fun getAllTask(): List<Task>
 
     @Update

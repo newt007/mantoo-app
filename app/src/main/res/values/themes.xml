@@ -26,11 +26,30 @@
         <item name="android:textSize">48sp</item>
     </style>
     <style name="TextContent.Title" parent="TextContent.Bold">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/dark_blue_200</item>
         <item name="android:textSize">32sp</item>
     </style>
-    <style name="TextContent.SubTitle" parent="TextContent">
-        <item name="android:color">@color/black</item>
+    <style name="TextContent.SectionTitle" parent="TextContent.Bold">
+        <item name="android:textColor">@color/dark_blue_200</item>
         <item name="android:textSize">24sp</item>
     </style>
+    <style name="TextContent.Regular" parent="TextContent">
+        <item name="android:textColor">@color/dark_blue_200</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="TextContent.SubTitle" parent="TextContent">
+        <item name="android:color">@color/dark_blue_200</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!--  Task Style  -->
+    <style name="TextContent.TaskCategory" parent="TextContent">
+        <item name="android:textColor">@color/dark_blue_200</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="TextContent.TaskTitle" parent="TextContent.Bold">
+        <item name="android:textColor">@color/dark_blue_200</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
 </resources>

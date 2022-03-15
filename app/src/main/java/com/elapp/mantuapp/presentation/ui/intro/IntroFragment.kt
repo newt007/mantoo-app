@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.elapp.mantuapp.R
 import com.elapp.mantuapp.databinding.FragmentIntroBinding
 import com.elapp.mantuapp.presentation.ui.profile.ProfileViewModel
 import com.elapp.mantuapp.utils.SessionManager
@@ -50,6 +52,7 @@ class IntroFragment : Fragment() {
             name.isNotEmpty() && name.length > 4 -> {
                 updateLogin()
                 userViewModel.saveUserDataForFirstTime(name)
+                findNavController().navigate(R.id.action_introFragment_to_homeFragment)
             }
             else -> {
                 Timber.e("Unknown error occured")

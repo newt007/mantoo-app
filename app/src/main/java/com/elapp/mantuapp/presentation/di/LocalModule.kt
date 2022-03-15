@@ -2,6 +2,8 @@ package com.elapp.mantuapp.presentation.di
 
 import android.content.Context
 import androidx.room.Room
+import com.elapp.mantuapp.data.local.dao.CategoryDao
+import com.elapp.mantuapp.data.local.dao.PriorityDao
 import com.elapp.mantuapp.data.local.dao.TaskDao
 import com.elapp.mantuapp.data.local.dao.UserDao
 import com.elapp.mantuapp.data.local.database.MantooDatabase
@@ -30,5 +32,11 @@ class LocalModule {
 
     @Provides
     fun provideTaskDao(database: MantooDatabase): TaskDao = database.getTaskDao()
+
+    @Provides
+    fun provideCategoryDao(database: MantooDatabase): CategoryDao = database.getCategoryDao()
+
+    @Provides
+    fun providePriorityDao(database: MantooDatabase): PriorityDao = database.getPriorityDao()
 
 }
