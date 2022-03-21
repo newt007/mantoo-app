@@ -28,6 +28,28 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.elapp.mantuapp.presentation.ui.home.HomeFragment"
-        android:label="HomeFragment" />
-
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addNewTaskFragment"
+            app:destination="@id/addNewTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.elapp.mantuapp.presentation.ui.category.CategoryFragment"
+        android:label="CategoryFragment" >
+        <action
+            android:id="@+id/action_categoryFragment_to_addCategoryFragment"
+            app:destination="@id/addCategoryFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/addCategoryFragment"
+        android:name="com.elapp.mantuapp.presentation.ui.category.add.AddCategoryFragment"
+        android:label="AddCategoryFragment" />
+    <fragment
+        android:id="@+id/addNewTaskFragment"
+        android:name="com.elapp.mantuapp.presentation.ui.task.add.AddNewTaskFragment"
+        android:label="AddNewTaskFragment" />
 </navigation>

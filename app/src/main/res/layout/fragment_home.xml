@@ -85,7 +85,7 @@
         app:layout_constraintTop_toBottomOf="@id/tx_task_title"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab2"
+        android:id="@+id/fab_unknown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -96,14 +96,14 @@
         android:clickable="true"
         android:focusable="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/fab"
+        app:layout_constraintBottom_toTopOf="@+id/main_fab"
         app:layout_constraintEnd_toEndOf="parent"
         app:pressedTranslationZ="12dp"
-        app:srcCompat="@drawable/ic_category"
+        app:srcCompat="@drawable/ic_task"
         tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab3"
+        android:id="@+id/fab_add_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -114,15 +114,15 @@
         android:clickable="true"
         android:focusable="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/fab1"
-        app:layout_constraintEnd_toStartOf="@+id/fab2"
+        app:layout_constraintBottom_toTopOf="@+id/fab_add_task"
+        app:layout_constraintEnd_toStartOf="@+id/fab_unknown"
         app:pressedTranslationZ="12dp"
-        app:srcCompat="@drawable/ic_task"
+        app:srcCompat="@drawable/ic_category"
         tools:visibility="visible" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab1"
+        android:id="@+id/fab_add_task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -132,14 +132,14 @@
         android:clickable="true"
         android:focusable="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/fab"
-        app:layout_constraintEnd_toStartOf="@+id/fab"
+        app:layout_constraintBottom_toBottomOf="@+id/main_fab"
+        app:layout_constraintEnd_toStartOf="@+id/main_fab"
         app:pressedTranslationZ="12dp"
         app:srcCompat="@drawable/ic_add_task"
         tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/main_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"

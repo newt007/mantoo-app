@@ -33,10 +33,8 @@ class SplashFragment : Fragment() {
         val isLogin = SessionManager(requireContext()).getIsLogin
         Handler(Looper.getMainLooper()).postDelayed({
             if (isLogin) {
-                Toast.makeText(context, "Udah login bro", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
             } else {
-                Toast.makeText(context, "Belom login bro", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_splashFragment_to_introFragment)
             }
         }, 3000L)

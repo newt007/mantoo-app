@@ -18,5 +18,9 @@ data class Task(
     @ColumnInfo(name = "task_category")
     val taskCategory: Int,
     @ColumnInfo(name = "task_description")
-    val taskDescription: String
+    val taskDescription: String,
+    @ColumnInfo(name = "task_status")
+    val taskStatus: Int,
+    @ColumnInfo(name = "task_accomplished_date")
+    val taskAccomplishedDate: String
 )

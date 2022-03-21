@@ -14,7 +14,9 @@ class TaskDataSource @Inject constructor(private val taskDao: TaskDao) {
             taskDate = task.taskDate,
             taskTime = task.taskTime,
             taskCategory = task.taskCategory,
-            taskDescription = task.taskDescription
+            taskDescription = task.taskDescription,
+            taskStatus = task.taskStatus,
+            taskAccomplishedDate = task.taskAccomplishedDate
         )
         taskDao.insertNewTask(task)
     }
