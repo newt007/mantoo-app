@@ -27,4 +27,6 @@
     <string name="masukkan_deskripsi_task">Masukkan deskripsi task</string>
     <string name="deskripsi_task">Deskripsi Task</string>
     <string name="masukkan_jam_task">Masukkan jam task</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>

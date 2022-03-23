@@ -12,6 +12,8 @@ class TaskRepository @Inject constructor(private val taskDataSource: TaskDataSou
 
     suspend fun getAllTask() : List<Task> = taskDataSource.getAllTasks()
 
+    suspend fun getTaskListByDate(date: String): List<Task> = taskDataSource.getTaskListByDate(date)
+
     suspend fun updateTask(task: Task) = taskDataSource.updateTask(task)
 
     suspend fun deleteTask(taskId: Int) = taskDataSource.deleteTask(taskId)

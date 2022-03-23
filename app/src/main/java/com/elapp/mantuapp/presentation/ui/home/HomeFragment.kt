@@ -12,12 +12,14 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elapp.mantuapp.R
+import com.elapp.mantuapp.data.entity.Task
 import com.elapp.mantuapp.databinding.FragmentHomeBinding
 import com.elapp.mantuapp.presentation.ui.task.TaskAdapter
+import com.elapp.mantuapp.presentation.ui.task.listener.ItemListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), ItemListener {
 
     private val homeViewModel: HomeViewModel by viewModels()
 
@@ -44,15 +46,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initAnimation()
         setupFabButton()
-
-        binding.fabAddCategory.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
-        }
-
-        binding.fabAddTask.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_addNewTaskFragment)
-        }
-
+        setupFabButtonAction()
         getUserData()
         getAllTaskData()
     }
@@ -66,27 +60,40 @@ class HomeFragment : Fragment() {
             AnimationUtils.loadAnimation(context?.applicationContext, R.anim.fab_rotate_anticlock)
     }
 
+    private fun setupFabButtonAction() {
+        binding.fabAddCategory.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
+        }
+
+        binding.fabAddTask.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_addNewTaskFragment)
+        }
+        binding.fabTask.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_taskFragment)
+        }
+    }
+
     private fun setupFabButton() {
         binding.mainFab.setOnClickListener {
             if (fabIsOpen) {
                 binding.apply {
-                    fabUnknown.startAnimation(fabClose)
+                    fabTask.startAnimation(fabClose)
                     fabAddCategory.startAnimation(fabClose)
                     fabAddTask.startAnimation(fabClose)
                     mainFab.startAnimation(fabAntiClock)
-                    fabUnknown.isClickable = false
+                    fabTask.isClickable = false
                     fabAddCategory.isClickable = false
                     fabAddTask.isClickable = false
                 }
-                fabIsOpen = false;
+                fabIsOpen = false
 
             } else {
                 binding.apply {
-                    fabUnknown.startAnimation(fabOpen)
+                    fabTask.startAnimation(fabOpen)
                     fabAddCategory.startAnimation(fabOpen)
                     fabAddTask.startAnimation(fabOpen)
                     mainFab.startAnimation(fabClock)
-                    fabUnknown.isClickable = true
+                    fabTask.isClickable = true
                     fabAddCategory.isClickable = true
                     fabAddTask.isClickable = true
                 }
@@ -104,6 +111,7 @@ class HomeFragment : Fragment() {
     private fun getAllTaskData() {
         homeViewModel.getAllTask().observe(viewLifecycleOwner) { task ->
             val adapter = TaskAdapter(task)
+            adapter.onItemClicked(this)
             binding.rvTask.adapter = adapter
             binding.rvTask.layoutManager = LinearLayoutManager(context)
         }
@@ -118,6 +126,11 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _fragmentHomeBinding = null
+    }
+
+    override fun onClicked(task: Task) {
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailTaskFragment(task)
+        findNavController().navigate(action)
     }
 
 }

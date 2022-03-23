@@ -1,9 +1,12 @@
 package com.elapp.mantuapp.data.entity
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity(tableName = "tbl_task")
 data class Task(
     @ColumnInfo(name = "task_id")
@@ -23,4 +26,4 @@ data class Task(
     val taskStatus: Int = 0,
     @ColumnInfo(name = "task_accomplished_date")
     val taskAccomplishedDate: String? = null
-)
+): Parcelable

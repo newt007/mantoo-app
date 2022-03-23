@@ -23,6 +23,8 @@ class TaskDataSource @Inject constructor(private val taskDao: TaskDao) {
 
     suspend fun getAllTasks(): List<Task> = taskDao.getAllTask()
 
+    suspend fun getTaskListByDate(date: String): List<Task> = taskDao.getTaskListByDate(date)
+
     suspend fun updateTask(task: Task) = taskDao.updateTask(task)
 
     suspend fun deleteTask(taskId: Int) = taskDao.deleteTask(taskId)

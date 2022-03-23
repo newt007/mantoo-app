@@ -53,5 +53,8 @@
         <item name="android:textColor">@color/dark_blue_200</item>
         <item name="android:textSize">18sp</item>
     </style>
+    <style name="TextContent.TaskDescription" parent="TextContent">
+        <item name="android:textSize">12sp</item>
+    </style>
 
 </resources>

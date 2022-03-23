@@ -85,7 +85,7 @@
         app:layout_constraintTop_toBottomOf="@id/tx_task_title"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_unknown"
+        android:id="@+id/fab_task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -115,7 +115,7 @@
         android:focusable="true"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/fab_add_task"
-        app:layout_constraintEnd_toStartOf="@+id/fab_unknown"
+        app:layout_constraintEnd_toStartOf="@+id/fab_task"
         app:pressedTranslationZ="12dp"
         app:srcCompat="@drawable/ic_category"
         tools:visibility="visible" />

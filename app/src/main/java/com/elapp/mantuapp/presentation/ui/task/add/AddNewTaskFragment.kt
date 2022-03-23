@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.content.res.AppCompatResources
@@ -20,7 +19,6 @@ import androidx.navigation.fragment.findNavController
 import com.elapp.mantuapp.R
 import com.elapp.mantuapp.data.entity.Task
 import com.elapp.mantuapp.databinding.FragmentAddNewTaskBinding
-import com.elapp.mantuapp.presentation.ui.category.CategoryViewModel
 import com.elapp.mantuapp.presentation.ui.category.SpinnerCategoryAdapter
 import dagger.hilt.android.AndroidEntryPoint
 

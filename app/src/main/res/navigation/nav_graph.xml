@@ -35,6 +35,12 @@
         <action
             android:id="@+id/action_homeFragment_to_addNewTaskFragment"
             app:destination="@id/addNewTaskFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailTaskFragment"
+            app:destination="@id/detailTaskFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_taskFragment"
+            app:destination="@id/taskFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoryFragment"
@@ -52,4 +58,16 @@
         android:id="@+id/addNewTaskFragment"
         android:name="com.elapp.mantuapp.presentation.ui.task.add.AddNewTaskFragment"
         android:label="AddNewTaskFragment" />
+    <fragment
+        android:id="@+id/detailTaskFragment"
+        android:name="com.elapp.mantuapp.presentation.ui.task.detail.DetailTaskFragment"
+        android:label="DetailTaskFragment" >
+        <argument
+            android:name="task"
+            app:argType="com.elapp.mantuapp.data.entity.Task" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.elapp.mantuapp.presentation.ui.task.TaskFragment"
+        android:label="TaskFragment" />
 </navigation>
