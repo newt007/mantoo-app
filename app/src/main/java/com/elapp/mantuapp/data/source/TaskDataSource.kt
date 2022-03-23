@@ -18,7 +18,7 @@ class TaskDataSource @Inject constructor(private val taskDao: TaskDao) {
             taskStatus = task.taskStatus,
             taskAccomplishedDate = task.taskAccomplishedDate
         )
-        taskDao.insertNewTask(task)
+        taskDao.insertNewTask(newTask)
     }
 
     suspend fun getAllTasks(): List<Task> = taskDao.getAllTask()

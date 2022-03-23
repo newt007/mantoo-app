@@ -10,8 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.elapp.mantuapp.R
 import com.elapp.mantuapp.databinding.FragmentHomeBinding
+import com.elapp.mantuapp.presentation.ui.task.TaskAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -52,6 +54,7 @@ class HomeFragment : Fragment() {
         }
 
         getUserData()
+        getAllTaskData()
     }
 
     private fun initAnimation() {
@@ -100,13 +103,16 @@ class HomeFragment : Fragment() {
 
     private fun getAllTaskData() {
         homeViewModel.getAllTask().observe(viewLifecycleOwner) { task ->
-
+            val adapter = TaskAdapter(task)
+            binding.rvTask.adapter = adapter
+            binding.rvTask.layoutManager = LinearLayoutManager(context)
         }
     }
 
     override fun onResume() {
         super.onResume()
         fabIsOpen = false
+        getAllTaskData()
     }
 
     override fun onDestroyView() {

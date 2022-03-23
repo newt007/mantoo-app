@@ -20,7 +20,7 @@ data class Task(
     @ColumnInfo(name = "task_description")
     val taskDescription: String,
     @ColumnInfo(name = "task_status")
-    val taskStatus: Int,
+    val taskStatus: Int = 0,
     @ColumnInfo(name = "task_accomplished_date")
-    val taskAccomplishedDate: String
+    val taskAccomplishedDate: String? = null
 )
