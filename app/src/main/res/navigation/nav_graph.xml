@@ -20,9 +20,13 @@
         android:label="SplashFragment" >
         <action
             android:id="@+id/action_splashFragment_to_introFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"
             app:destination="@id/introFragment" />
         <action
             android:id="@+id/action_splashFragment_to_homeFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"
             app:destination="@id/homeFragment" />
     </fragment>
     <fragment
@@ -50,7 +54,7 @@
             android:id="@+id/action_categoryFragment_to_addCategoryFragment"
             app:destination="@id/addCategoryFragment" />
     </fragment>
-    <dialog
+    <fragment
         android:id="@+id/addCategoryFragment"
         android:name="com.elapp.mantuapp.presentation.ui.category.add.AddCategoryFragment"
         android:label="AddCategoryFragment" />

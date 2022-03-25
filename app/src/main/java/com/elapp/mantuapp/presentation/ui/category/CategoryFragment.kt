@@ -47,7 +47,7 @@ class CategoryFragment : Fragment() {
 
         getAllCategory()
         binding.btnAddCategory.setOnClickListener {
-            AddCategoryFragment().show(childFragmentManager, AddCategoryFragment.TAG)
+            it.findNavController().navigate(R.id.action_categoryFragment_to_addCategoryFragment)
         }
     }
 

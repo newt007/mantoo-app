@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.elapp.mantuapp.R
@@ -16,7 +17,7 @@ import com.elapp.mantuapp.utils.showSnackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AddCategoryFragment: DialogFragment() {
+class AddCategoryFragment: Fragment() {
 
     private val categoryViewModel: CategoryViewModel by viewModels()
 
@@ -32,13 +33,8 @@ class AddCategoryFragment: DialogFragment() {
         return _fragmentAddCategoryBinding?.root
     }
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        return super.onCreateDialog(savedInstanceState)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         binding.btnAddCategory.setOnClickListener {
             val categoryName = binding.edtCategoryName.text.toString()
@@ -62,11 +58,6 @@ class AddCategoryFragment: DialogFragment() {
     private fun addNewCategory(mView: View, category: Category) {
         categoryViewModel.addNewCategory(category)
         view?.showSnackbar(mView, getString(R.string.add_category_success_message))
-        dismiss()
     }
-
-    companion object {
-        const val TAG = "ADD_NEW_CATEGORY"
-    }
-
+    
 }

@@ -57,7 +57,7 @@ class AddNewTaskFragment : Fragment() {
         binding.edtTaskDate.setOnClickListener {
             val datePicker = DatePickerDialog(requireContext())
             datePicker.setOnDateSetListener { _, year, month, day ->
-                binding.edtTaskDate.setText("$year/$month/$day")
+                binding.edtTaskDate.setText("$year/${month+1}/$day")
                 binding.edtTaskDate.clearFocus()
             }
             datePicker.show()

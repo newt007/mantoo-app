@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Mantoo</string>
     <string name="halo_selamat_datang_di_mantoo">Halo, selamat datang di Mantoo 👋</string>
+    <string name="task_subtitile">Kamu memiliki %1$s task pada hari ini</string>
     <string name="siapa_nama_kamu">Siapa nama kamu ?</string>
     <string name="hello_world">Hello World</string>
     <string name="welcome_messages">Halo, %1$s! \nSelamat Datang di Mantoo.</string>
@@ -29,4 +30,5 @@
     <string name="masukkan_jam_task">Masukkan jam task</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
+    <string name="daftar_task">Daftar Task</string>
 </resources>
