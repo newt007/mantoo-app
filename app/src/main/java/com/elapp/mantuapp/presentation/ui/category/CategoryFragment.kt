@@ -44,7 +44,7 @@ class CategoryFragment : Fragment() {
     private fun initUI() {
         binding.toolbar.apply {
             setBackgroundColor(ContextCompat.getColor(context, R.color.dark_blue_200))
-            title = getString(R.string.tambah_kategori_baru)
+            title = getString(R.string.daftar_kategori)
             setTitleTextColor(ContextCompat.getColor(context, R.color.white))
             navigationIcon = AppCompatResources.getDrawable(context, R.drawable.ic_arrow_back)
             setNavigationOnClickListener {

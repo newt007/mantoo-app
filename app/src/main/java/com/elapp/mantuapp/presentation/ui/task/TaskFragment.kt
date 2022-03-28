@@ -49,7 +49,7 @@ class TaskFragment : Fragment() {
 
         val date = Calendar.getInstance()
         currentDate = formattedDate(date.time)
-        Toast.makeText(context, currentDate, Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, currentDate, Toast.LENGTH_SHORT).show()
         currentDay = dayFormatter(date.time)
         getTaskListByDate(currentDate)
         binding.txDateDay.text = dateFormatToGetDay(date.time)
@@ -63,7 +63,7 @@ class TaskFragment : Fragment() {
         binding.txDateDay.setOnClickListener {
             val datePicker = DatePickerDialog(requireContext())
             datePicker.setOnDateSetListener { _, year, month, day ->
-                Toast.makeText(context, "$year/$month/$day", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context, "$year/$month/$day", Toast.LENGTH_SHORT).show()
                 getTaskListByDate("$year/${month+1}/$day")
             }
             datePicker.show()
@@ -86,7 +86,6 @@ class TaskFragment : Fragment() {
         taskViewModel.getTaskByDate(date).observe(viewLifecycleOwner) { taskList ->
             if (taskList.isEmpty()) {
                 binding.txTaskSubtitle.text =   resources.getString(R.string.task_subtitile, "0")
-
             } else {
                 val adapter = SortedTaskAdapter(taskList)
                 binding.apply {

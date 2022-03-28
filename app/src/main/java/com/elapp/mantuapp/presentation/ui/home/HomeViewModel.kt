@@ -27,6 +27,14 @@ class HomeViewModel @Inject constructor(
         return task
     }
 
+    fun getTaskByDate(date: String): LiveData<List<Task>> {
+        val taskList = MutableLiveData<List<Task>>()
+        viewModelScope.launch(Dispatchers.IO) {
+            taskList.postValue(taskRepository.getTaskListByDate(date))
+        }
+        return taskList
+    }
+
     fun getUserData(userId: Int): LiveData<User> {
         val user = MutableLiveData<User>()
         viewModelScope.launch(Dispatchers.IO) {

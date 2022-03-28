@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.elapp.mantuapp.R
 import com.elapp.mantuapp.data.entity.Category
@@ -15,7 +18,7 @@ import com.elapp.mantuapp.utils.showSnackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AddCategoryFragment: Fragment() {
+class AddCategoryFragment : Fragment() {
 
     private val categoryViewModel: CategoryViewModel by viewModels()
 
@@ -34,11 +37,20 @@ class AddCategoryFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupUI()
         setupAction()
     }
 
     private fun setupUI() {
-
+        binding.toolbar.apply {
+            setBackgroundColor(ContextCompat.getColor(context, R.color.dark_blue_200))
+            title = getString(R.string.tambah_kategori_baru)
+            setTitleTextColor(ContextCompat.getColor(context, R.color.white))
+            navigationIcon = AppCompatResources.getDrawable(context, R.drawable.ic_arrow_back)
+            setNavigationOnClickListener {
+                it.findNavController().popBackStack()
+            }
+        }
     }
 
     private fun setupAction() {
@@ -49,7 +61,8 @@ class AddCategoryFragment: Fragment() {
                     binding.edtCategoryName.error = "Nama kategori tidak boleh kosong"
                 }
                 categoryName.length < 4 -> {
-                    binding.edtCategoryName.error = "Nama kategori tidak boleh kurang dari 4 karakter"
+                    binding.edtCategoryName.error =
+                        "Nama kategori tidak boleh kurang dari 4 karakter"
                 }
                 else -> {
                     val category = Category(
