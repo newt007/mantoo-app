@@ -31,4 +31,5 @@
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="daftar_task">Daftar Task</string>
+    <string name="add_task_success_message">Task berhasil ditambahkan</string>
 </resources>

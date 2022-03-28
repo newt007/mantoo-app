@@ -1,6 +1,5 @@
 package com.elapp.mantuapp.presentation.ui.task.add
 
-import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Build
@@ -8,7 +7,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
@@ -20,6 +18,7 @@ import com.elapp.mantuapp.R
 import com.elapp.mantuapp.data.entity.Task
 import com.elapp.mantuapp.databinding.FragmentAddNewTaskBinding
 import com.elapp.mantuapp.presentation.ui.category.SpinnerCategoryAdapter
+import com.elapp.mantuapp.utils.showSnackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,7 +38,6 @@ class AddNewTaskFragment : Fragment() {
         return _fragmentAddNewTaskBinding?.root
     }
 
-    @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -57,7 +55,8 @@ class AddNewTaskFragment : Fragment() {
         binding.edtTaskDate.setOnClickListener {
             val datePicker = DatePickerDialog(requireContext())
             datePicker.setOnDateSetListener { _, year, month, day ->
-                binding.edtTaskDate.setText("$year/${month+1}/$day")
+                val date = "$year/${month+1}/$day"
+                binding.edtTaskDate.setText(date)
                 binding.edtTaskDate.clearFocus()
             }
             datePicker.show()
@@ -65,7 +64,8 @@ class AddNewTaskFragment : Fragment() {
         binding.edtTaskTime.setOnClickListener {
             val timePicker = TimePickerDialog(
                 requireContext(), { _, hours, minute ->
-                    binding.edtTaskTime.setText("$hours:$minute")
+                    val time = "$hours:$minute"
+                    binding.edtTaskTime.setText(time)
                 },
                 12, 10, true
             )
@@ -94,7 +94,7 @@ class AddNewTaskFragment : Fragment() {
     private fun addNewTask(newTask: Task) {
         addTaskViewModel.addNewTask(newTask)
         findNavController().popBackStack()
-        Toast.makeText(context, "Task baru berhasil ditambahkan", Toast.LENGTH_SHORT).show()
+        view?.showSnackbar(requireView(), getString(R.string.add_task_success_message))
     }
 
 }
