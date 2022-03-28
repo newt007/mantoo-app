@@ -52,10 +52,14 @@ class TaskFragment : Fragment() {
         Toast.makeText(context, currentDate, Toast.LENGTH_SHORT).show()
         currentDay = dayFormatter(date.time)
         getTaskListByDate(currentDate)
-        setupToolbar()
-
         binding.txDateDay.text = dateFormatToGetDay(date.time)
 
+        setupUI()
+        setupAction()
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setupAction() {
         binding.txDateDay.setOnClickListener {
             val datePicker = DatePickerDialog(requireContext())
             datePicker.setOnDateSetListener { _, year, month, day ->
@@ -66,7 +70,7 @@ class TaskFragment : Fragment() {
         }
     }
 
-    private fun setupToolbar() {
+    private fun setupUI() {
         binding.toolbar.apply {
             setBackgroundColor(ContextCompat.getColor(context, R.color.dark_blue_200))
             title = getString(R.string.daftar_task)

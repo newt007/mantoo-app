@@ -38,8 +38,12 @@ class DetailTaskFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        task = arguments?.getParcelable("task")
+        getArgumentsNavigation()
         setupToolbar()
+    }
+
+    private fun getArgumentsNavigation() {
+        task = arguments?.getParcelable("task")
     }
 
     private fun setupToolbar() {

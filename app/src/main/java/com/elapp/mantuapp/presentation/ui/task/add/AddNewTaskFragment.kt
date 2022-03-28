@@ -41,6 +41,13 @@ class AddNewTaskFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupUI()
+        setupAction()
+        getCategory()
+
+    }
+
+    private fun setupUI() {
         binding.toolbar.apply {
             setBackgroundColor(ContextCompat.getColor(context, R.color.dark_blue_200))
             title = getString(R.string.add_new_task)
@@ -50,8 +57,10 @@ class AddNewTaskFragment : Fragment() {
                 it.findNavController().popBackStack()
             }
         }
-        getCategory()
+    }
 
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun setupAction() {
         binding.edtTaskDate.setOnClickListener {
             val datePicker = DatePickerDialog(requireContext())
             datePicker.setOnDateSetListener { _, year, month, day ->

@@ -34,6 +34,14 @@ class AddCategoryFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupAction()
+    }
+
+    private fun setupUI() {
+
+    }
+
+    private fun setupAction() {
         binding.btnAddCategory.setOnClickListener {
             val categoryName = binding.edtCategoryName.text.toString()
             when {
@@ -47,7 +55,7 @@ class AddCategoryFragment: Fragment() {
                     val category = Category(
                         categoryName = categoryName
                     )
-                    addNewCategory(view, category)
+                    addNewCategory(requireView(), category)
                 }
             }
         }

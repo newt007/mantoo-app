@@ -35,6 +35,13 @@ class CategoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        getAllCategory()
+
+        initUI()
+        initAction()
+    }
+
+    private fun initUI() {
         binding.toolbar.apply {
             setBackgroundColor(ContextCompat.getColor(context, R.color.dark_blue_200))
             title = getString(R.string.tambah_kategori_baru)
@@ -44,8 +51,9 @@ class CategoryFragment : Fragment() {
                 it.findNavController().popBackStack()
             }
         }
+    }
 
-        getAllCategory()
+    private fun initAction() {
         binding.btnAddCategory.setOnClickListener {
             it.findNavController().navigate(R.id.action_categoryFragment_to_addCategoryFragment)
         }

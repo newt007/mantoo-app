@@ -35,6 +35,10 @@ class IntroFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupAction()
+    }
+
+    private fun setupAction() {
         binding.btnSave.setOnClickListener {
             val name = binding.edtName.text.toString()
             saveDataForFirstTime(name)
