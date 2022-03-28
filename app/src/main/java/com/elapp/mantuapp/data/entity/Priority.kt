@@ -8,9 +8,11 @@ import androidx.room.PrimaryKey
 data class Priority(
     @ColumnInfo(name = "priority_id")
     @PrimaryKey(autoGenerate = true)
-    val priorityId: Int = 0,
+    val priorityId: Long = 0,
     @ColumnInfo(name = "priority_name")
     val priorityName: String,
     @ColumnInfo(name = "priority_desc")
-    val priorityDesc: String
+    val priorityDesc: String,
+    @ColumnInfo(name = "priority_color")
+    val priorityColor: Int
 )

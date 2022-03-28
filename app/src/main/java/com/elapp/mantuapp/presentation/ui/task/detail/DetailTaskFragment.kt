@@ -40,6 +40,7 @@ class DetailTaskFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         getArgumentsNavigation()
         setupToolbar()
+        setupUI()
     }
 
     private fun getArgumentsNavigation() {
@@ -81,7 +82,15 @@ class DetailTaskFragment : Fragment() {
                 }
             }
         }
+    }
 
+    private fun setupUI() {
+        binding.apply {
+            tvTaskTitle.text = task?.taskTitle
+            tvTaskDesc.text = task?.taskDescription
+            tvTaskDate.text = task?.taskDate
+            tvTaskTime.text = task?.taskTime
+        }
     }
 
     private fun deleteTask(taskId: Int) {

@@ -9,7 +9,7 @@ import com.elapp.mantuapp.data.entity.Priority
 interface PriorityDao {
 
     @Insert
-    suspend fun autoInsertPriority(priority: Priority)
+    fun autoInsertPriority(priority: List<Priority>)
 
     @Query("SELECT * FROM tbl_priority")
     suspend fun getPriority(): List<Priority>

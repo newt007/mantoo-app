@@ -12,6 +12,9 @@ interface CategoryDao {
     @Insert
     suspend fun addNewCategory(category: Category)
 
+    @Insert
+    fun prePopulateInsertCategory(categories : List<Category>)
+
     @Query("SELECT * FROM tbl_category")
     suspend fun getAllCategory(): List<Category>
 

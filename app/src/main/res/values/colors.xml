@@ -10,4 +10,10 @@
     <color name="white_400">#F8F8F8</color>
 
     <color name="dark_blue_200">#1D4E5F</color>
+
+    <!--  Priority Color Pallete  -->
+    <color name="colorRed">#FF0000</color>
+    <color name="colorYellow">#FFBB00</color>
+    <color name="colorBlue">#0086FF</color>
+    <color name="colorGreen">#7CBB00</color>
 </resources>

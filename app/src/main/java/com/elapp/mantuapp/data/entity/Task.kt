@@ -19,7 +19,9 @@ data class Task(
     @ColumnInfo(name = "task_time")
     val taskTime: String,
     @ColumnInfo(name = "task_category")
-    val taskCategory: Int,
+    val taskCategory: Long,
+    @ColumnInfo(name = "task_priority")
+    val taskPriority: Long,
     @ColumnInfo(name = "task_description")
     val taskDescription: String,
     @ColumnInfo(name = "task_status")

@@ -12,6 +12,9 @@ interface TaskDao {
     @Query("SELECT * FROM tbl_task WHERE task_date=:date order BY task_time")
     suspend fun getTaskListByDate(date: String): List<Task>
 
+    /*@Query("SELECT * FROM tbl_task WHERE task_id=")
+    suspend fun getDetailTask(taskId: )*/
+
     @Query("SELECT * FROM  tbl_task")
     suspend fun getAllTask(): List<Task>
 

@@ -22,6 +22,12 @@ class TaskViewModel @Inject constructor(
         }
     }
 
+    /*fun getDetailTask(taskId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            taskRepository.
+        }
+    }*/
+
     fun getTaskByDate(date: String): LiveData<List<Task>> {
         val taskList = MutableLiveData<List<Task>>()
         viewModelScope.launch(Dispatchers.IO) {

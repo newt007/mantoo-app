@@ -14,7 +14,7 @@
         android:padding="16dp">
 
         <View
-            android:id="@+id/view"
+            android:id="@+id/priority_view"
             android:layout_width="3dp"
             android:layout_height="0dp"
             android:background="@color/dark_blue_200"
@@ -29,8 +29,8 @@
             android:text="@string/task_category"
             android:layout_marginStart="16dp"
             style="@style/TextContent.TaskCategory"
-            app:layout_constraintStart_toEndOf="@+id/view"
-            app:layout_constraintTop_toTopOf="@+id/view" />
+            app:layout_constraintStart_toEndOf="@+id/priority_view"
+            app:layout_constraintTop_toTopOf="@+id/priority_view" />
 
         <TextView
             android:id="@+id/tx_task_title"
@@ -40,7 +40,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             style="@style/TextContent.TaskTitle"
-            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/priority_view"
             app:layout_constraintTop_toBottomOf="@+id/tx_task_category" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

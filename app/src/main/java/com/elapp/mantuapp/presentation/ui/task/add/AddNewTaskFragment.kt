@@ -18,6 +18,7 @@ import com.elapp.mantuapp.R
 import com.elapp.mantuapp.data.entity.Task
 import com.elapp.mantuapp.databinding.FragmentAddNewTaskBinding
 import com.elapp.mantuapp.presentation.ui.category.SpinnerCategoryAdapter
+import com.elapp.mantuapp.presentation.ui.priority.SpinnerPriorityAdapter
 import com.elapp.mantuapp.utils.showSnackbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,7 +44,7 @@ class AddNewTaskFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupUI()
         setupAction()
-        getCategory()
+        setupObserver()
 
     }
 
@@ -83,20 +84,26 @@ class AddNewTaskFragment : Fragment() {
         binding.btnAddTask.setOnClickListener {
             val task = Task(
                 taskTitle = binding.edtTaskName.text.toString(),
-                taskCategory = binding.spinnerCategory.id,
+                taskCategory = binding.spinnerCategory.selectedItemId,
                 taskTime = binding.edtTaskTime.text.toString(),
                 taskDate = binding.edtTaskDate.text.toString(),
-                taskDescription = binding.edtTaskDesc.text.toString()
+                taskDescription = binding.edtTaskDesc.text.toString(),
+                taskPriority = binding.spinnerPriority.selectedItemId
             )
             addNewTask(task)
         }
     }
 
-    private fun getCategory() {
-        addTaskViewModel.getAllCategory().observe(viewLifecycleOwner) { category ->
-            val adapter = SpinnerCategoryAdapter(requireContext(), category)
-            adapter.setInflate(layoutInflater)
-            binding.spinnerCategory.adapter = adapter
+    private fun setupObserver() {
+        addTaskViewModel.getAllCategory().observe(viewLifecycleOwner) { categories ->
+            val spinnerCategoryAdapter = SpinnerCategoryAdapter(categories)
+            spinnerCategoryAdapter.setInflate(layoutInflater)
+            binding.spinnerCategory.adapter = spinnerCategoryAdapter
+        }
+        addTaskViewModel.getAllPriority().observe(viewLifecycleOwner) { priorities ->
+            val spinnerPriorityAdapter = SpinnerPriorityAdapter(priorities)
+            spinnerPriorityAdapter.setInflate(layoutInflater)
+            binding.spinnerPriority.adapter = spinnerPriorityAdapter
         }
     }
 
