@@ -16,7 +16,6 @@ import com.elapp.mantuapp.data.entity.Task
 import com.elapp.mantuapp.databinding.FragmentHomeBinding
 import com.elapp.mantuapp.presentation.ui.task.TaskAdapter
 import com.elapp.mantuapp.presentation.ui.task.listener.ItemListener
-import com.elapp.mantuapp.utils.dayFormatter
 import com.elapp.mantuapp.utils.formattedDate
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
