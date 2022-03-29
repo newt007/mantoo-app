@@ -47,14 +47,17 @@ class NoteFragment : Fragment(), NoteItemListener {
     }
 
     private fun initUI() {
-        binding.rvNote.layoutManager = GridLayoutManager(context, 2)
-        binding.toolbar.apply {
-            setBackgroundColor(ContextCompat.getColor(context, R.color.dark_blue_200))
-            title = getString(R.string.daftar_task)
-            setTitleTextColor(ContextCompat.getColor(context, R.color.white))
-            navigationIcon = AppCompatResources.getDrawable(context, R.drawable.ic_arrow_back)
-            setNavigationOnClickListener {
-                it.findNavController().popBackStack()
+        binding.apply {
+            rvNote.layoutManager = GridLayoutManager(context, 2)
+            svNote.queryHint = getString(R.string.cari_catatan)
+            toolbar.apply {
+                setBackgroundColor(ContextCompat.getColor(context, R.color.dark_blue_200))
+                title = getString(R.string.daftar_task)
+                setTitleTextColor(ContextCompat.getColor(context, R.color.white))
+                navigationIcon = AppCompatResources.getDrawable(context, R.drawable.ic_arrow_back)
+                setNavigationOnClickListener {
+                    it.findNavController().popBackStack()
+                }
             }
         }
     }
@@ -65,7 +68,7 @@ class NoteFragment : Fragment(), NoteItemListener {
             val action = NoteFragmentDirections.actionNoteFragmentToAddNoteFragment(emptyNote, 1)
             it.findNavController().navigate(action)
         }
-        binding.svNote.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+        binding.svNote.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }

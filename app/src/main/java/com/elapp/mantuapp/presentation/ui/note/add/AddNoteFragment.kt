@@ -96,8 +96,6 @@ class AddNoteFragment : Fragment() {
     private fun initArguments() {
         note = arguments?.getParcelable("note")
         action = arguments?.getInt("action") ?: 1
-
-        Toast.makeText(context, "$action", Toast.LENGTH_SHORT).show()
     }
 
     private fun initAction() {

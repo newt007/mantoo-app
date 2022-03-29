@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:background="@null"
+        android:maxLines="1"
         android:hint="@string/judul_catatan"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:layout_editor_absoluteX="24dp" />

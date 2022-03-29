@@ -10,6 +10,7 @@
     android:layout_marginVertical="16dp"
     android:layout_marginHorizontal="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="0dp"
     app:contentPadding="16dp">
 
     <LinearLayout

@@ -42,4 +42,5 @@
     <string name="tambah_note_baru">Tambah Catatan Baru</string>
     <string name="edit_note">Edit Catatan</string>
     <string name="pin">Pin</string>
+    <string name="cari_catatan">Cari Catatan</string>
 </resources>
