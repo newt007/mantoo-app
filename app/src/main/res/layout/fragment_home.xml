@@ -103,7 +103,7 @@
         tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add_category"
+        android:id="@+id/fab_note"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -117,7 +117,7 @@
         app:layout_constraintBottom_toTopOf="@+id/fab_add_task"
         app:layout_constraintEnd_toStartOf="@+id/fab_task"
         app:pressedTranslationZ="12dp"
-        app:srcCompat="@drawable/ic_category"
+        app:srcCompat="@drawable/ic_add_note"
         tools:visibility="visible" />
 
 

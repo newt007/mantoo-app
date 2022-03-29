@@ -6,10 +6,7 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.elapp.mantuapp.data.entity.populatedata.PrePopulateData.Companion.getCategory
 import com.elapp.mantuapp.data.entity.populatedata.PrePopulateData.Companion.getPriority
-import com.elapp.mantuapp.data.local.dao.CategoryDao
-import com.elapp.mantuapp.data.local.dao.PriorityDao
-import com.elapp.mantuapp.data.local.dao.TaskDao
-import com.elapp.mantuapp.data.local.dao.UserDao
+import com.elapp.mantuapp.data.local.dao.*
 import com.elapp.mantuapp.data.local.database.MantooDatabase
 import com.elapp.mantuapp.data.local.database.ioThread
 import com.elapp.mantuapp.utils.ConstVal.DB_NAME
@@ -57,5 +54,8 @@ class LocalModule {
 
     @Provides
     fun providePriorityDao(database: MantooDatabase): PriorityDao = database.getPriorityDao()
+
+    @Provides
+    fun provideNoteDao(database: MantooDatabase): NoteDao = database.getNoteDao()
 
 }

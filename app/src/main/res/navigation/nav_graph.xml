@@ -45,6 +45,9 @@
         <action
             android:id="@+id/action_homeFragment_to_taskFragment"
             app:destination="@id/taskFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoryFragment"
@@ -74,4 +77,24 @@
         android:id="@+id/taskFragment"
         android:name="com.elapp.mantuapp.presentation.ui.task.TaskFragment"
         android:label="TaskFragment" />
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.elapp.mantuapp.presentation.ui.note.NoteFragment"
+        android:label="NoteFragment" >
+        <action
+            android:id="@+id/action_noteFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.elapp.mantuapp.presentation.ui.note.add.AddNoteFragment"
+        android:label="AddNoteFragment" >
+        <argument
+            android:name="note"
+            app:argType="com.elapp.mantuapp.data.entity.Note"
+            app:nullable="true" />
+        <argument
+            android:name="action"
+            app:argType="integer" />
+    </fragment>
 </navigation>

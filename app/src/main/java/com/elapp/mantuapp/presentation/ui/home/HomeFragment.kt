@@ -49,7 +49,7 @@ class HomeFragment : Fragment(), ItemListener {
         initAnimation()
         initObserver()
         setupFabButton()
-        setupFabButtonAction()
+        initAction()
     }
 
     private fun initAnimation() {
@@ -61,9 +61,9 @@ class HomeFragment : Fragment(), ItemListener {
             AnimationUtils.loadAnimation(context?.applicationContext, R.anim.fab_rotate_anticlock)
     }
 
-    private fun setupFabButtonAction() {
-        binding.fabAddCategory.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
+    private fun initAction() {
+        binding.fabNote.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_noteFragment)
         }
 
         binding.fabAddTask.setOnClickListener {
@@ -79,11 +79,11 @@ class HomeFragment : Fragment(), ItemListener {
             if (fabIsOpen) {
                 binding.apply {
                     fabTask.startAnimation(fabClose)
-                    fabAddCategory.startAnimation(fabClose)
+                    fabNote.startAnimation(fabClose)
                     fabAddTask.startAnimation(fabClose)
                     mainFab.startAnimation(fabAntiClock)
                     fabTask.isClickable = false
-                    fabAddCategory.isClickable = false
+                    fabNote.isClickable = false
                     fabAddTask.isClickable = false
                 }
                 fabIsOpen = false
@@ -91,11 +91,11 @@ class HomeFragment : Fragment(), ItemListener {
             } else {
                 binding.apply {
                     fabTask.startAnimation(fabOpen)
-                    fabAddCategory.startAnimation(fabOpen)
+                    fabNote.startAnimation(fabOpen)
                     fabAddTask.startAnimation(fabOpen)
                     mainFab.startAnimation(fabClock)
                     fabTask.isClickable = true
-                    fabAddCategory.isClickable = true
+                    fabNote.isClickable = true
                     fabAddTask.isClickable = true
                 }
                 fabIsOpen = true

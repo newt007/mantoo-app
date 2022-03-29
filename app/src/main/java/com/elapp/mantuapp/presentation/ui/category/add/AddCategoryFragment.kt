@@ -37,11 +37,11 @@ class AddCategoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupUI()
-        setupAction()
+        initUI()
+        initAction()
     }
 
-    private fun setupUI() {
+    private fun initUI() {
         binding.toolbar.apply {
             setBackgroundColor(ContextCompat.getColor(context, R.color.dark_blue_200))
             title = getString(R.string.tambah_kategori_baru)
@@ -53,7 +53,7 @@ class AddCategoryFragment : Fragment() {
         }
     }
 
-    private fun setupAction() {
+    private fun initAction() {
         binding.btnAddCategory.setOnClickListener {
             val categoryName = binding.edtCategoryName.text.toString()
             when {

@@ -15,6 +15,7 @@ import com.elapp.mantuapp.R
 import com.elapp.mantuapp.data.entity.Task
 import com.elapp.mantuapp.databinding.FragmentDetailTaskBinding
 import com.elapp.mantuapp.presentation.ui.task.TaskViewModel
+import com.elapp.mantuapp.utils.showSnackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,15 +40,15 @@ class DetailTaskFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getArgumentsNavigation()
-        setupToolbar()
-        setupUI()
+        initToolbar()
+        initUI()
     }
 
     private fun getArgumentsNavigation() {
         task = arguments?.getParcelable("task")
     }
 
-    private fun setupToolbar() {
+    private fun initToolbar() {
         binding.toolbar.apply {
             setBackgroundColor(ContextCompat.getColor(context, R.color.dark_blue_200))
             title = task?.taskTitle
@@ -84,7 +85,7 @@ class DetailTaskFragment : Fragment() {
         }
     }
 
-    private fun setupUI() {
+    private fun initUI() {
         binding.apply {
             tvTaskTitle.text = task?.taskTitle
             tvTaskDesc.text = task?.taskDescription
@@ -95,5 +96,6 @@ class DetailTaskFragment : Fragment() {
 
     private fun deleteTask(taskId: Int) {
         taskViewModel.deleteTask(taskId)
+        view?.showSnackbar(requireView(), "Task berhasil dihapus")
     }
 }

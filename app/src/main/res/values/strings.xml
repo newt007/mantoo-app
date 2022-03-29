@@ -34,4 +34,12 @@
     <string name="add_task_success_message">Task berhasil ditambahkan</string>
     <string name="prioritas_task">Prioritas Task</string>
     <string name="daftar_kategori">Daftar Kategori</string>
+    <string name="judul_catatan">Judul Catatan</string>
+    <string name="mulai_mengetik">Mulai Mengetik</string>
+    <string name="note_description">Note Description</string>
+    <string name="tidak_ada_catatan">Tidak ada catatan</string>
+    <string name="tambah_task_baru">Tambah Task Baru</string>
+    <string name="tambah_note_baru">Tambah Catatan Baru</string>
+    <string name="edit_note">Edit Catatan</string>
+    <string name="pin">Pin</string>
 </resources>
