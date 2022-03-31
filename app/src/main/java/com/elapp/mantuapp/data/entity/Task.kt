@@ -28,4 +28,4 @@ data class Task(
     val taskStatus: Int = 0,
     @ColumnInfo(name = "task_accomplished_date")
     val taskAccomplishedDate: String? = null
-): Parcelable
+) : Parcelable

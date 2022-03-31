@@ -42,6 +42,10 @@ class NoteViewModel @Inject constructor(private val noteRepository: NoteReposito
         return noteList
     }
 
-
+    fun deleteNote(noteId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            noteRepository.deleteNote(noteId)
+        }
+    }
 
 }

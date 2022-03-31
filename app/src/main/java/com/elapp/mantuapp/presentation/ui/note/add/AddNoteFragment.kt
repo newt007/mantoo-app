@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
@@ -76,6 +75,7 @@ class AddNoteFragment : Fragment() {
                                         p0.dismiss()
                                     }
                                     setPositiveButton("Hapus") { _, _ ->
+                                        note?.noteId?.let { noteId -> deleteNote(noteId) }
                                         findNavController().popBackStack()
                                     }
                                 }.create().show()
@@ -136,6 +136,11 @@ class AddNoteFragment : Fragment() {
 
     private fun initObserver() {
 
+    }
+
+    private fun deleteNote(noteId: Int) {
+        noteViewModel.deleteNote(noteId)
+        view?.showSnackbar(requireView(), "Task berhasil dihapus")
     }
 
 }

@@ -29,5 +29,4 @@ class NoteDataSource @Inject constructor(private val noteDao: NoteDao) {
         )
         noteDao.updateNote(newNote)
     }
-
 }

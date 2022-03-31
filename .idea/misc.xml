@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/drawable/circle_shape.xml" value="0.1465" />
+        <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/drawable/ic_outline_pin.xml" value="0.1295" />
+        <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/drawable/ic_pin.xml" value="0.1295" />
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/activity_main.xml" value="0.2604166666666667" />
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/category_item_row.xml" value="0.2604166666666667" />
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/fragment_add_category.xml" value="0.2604166666666667" />
@@ -11,12 +13,12 @@
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/fragment_add_note.xml" value="0.20520833333333333" />
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/fragment_category.xml" value="0.2604166666666667" />
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/fragment_detail_task.xml" value="0.22" />
-        <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/fragment_intro.xml" value="0.2" />
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/fragment_note.xml" value="0.22" />
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/fragment_splash.xml" value="0.264" />
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/fragment_task.xml" value="0.2604166666666667" />
-        <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/note_item_grid.xml" value="0.25" />
+        <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/note_item_grid.xml" value="0.22" />
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/sorted_task_item_row.xml" value="0.536" />
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/spinner_item.xml" value="0.2604166666666667" />
         <entry key="..\:/Project/AndroidStudio/Bangkit/MantuApp/app/src/main/res/layout/task_item_row.xml" value="0.2" />

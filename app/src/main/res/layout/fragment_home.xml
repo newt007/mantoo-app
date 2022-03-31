@@ -1,88 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/dark_blue_200"
-        android:paddingVertical="32dp"
-        android:paddingHorizontal="24dp"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tx_name"
-            style="@style/TextContent.Regular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome_messages"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
-
-        <View
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_below="@id/tx_name">
+            android:layout_height="wrap_content">
 
-        </View>
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/dark_blue_200"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="32dp"
+                app:layout_constraintTop_toTopOf="parent">
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/tx_name"
+                    style="@style/TextContent.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_messages"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/tx_name">
+
+                </View>
+
+            </RelativeLayout>
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        app:cardCornerRadius="16dp"
-        app:contentPaddingBottom="32dp"
-        app:contentPaddingLeft="16dp"
-        app:contentPaddingRight="16dp"
-        app:contentPaddingTop="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        tools:layout_editor_absoluteX="24dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="16dp"
+                app:contentPaddingBottom="32dp"
+                app:contentPaddingLeft="16dp"
+                app:contentPaddingRight="16dp"
+                app:contentPaddingTop="32dp"
+                app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+                tools:layout_editor_absoluteX="24dp">
 
-        <TextView
-            android:id="@+id/tx_unknown"
-            android:text="@string/kamu_punya_0_hari_ini"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            style="@style/TextContent.Regular"/>
+                <TextView
+                    android:id="@+id/tx_unknown"
+                    style="@style/TextContent.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kamu_punya_0_hari_ini"
+                    android:textSize="14sp" />
 
-    </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/tx_task_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/task_hari_ini"
-        android:layout_margin="24dp"
-        style="@style/TextContent.SectionTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+            <TextView
+                android:id="@+id/tx_task_title"
+                style="@style/TextContent.SectionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:text="@string/task_hari_ini"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-    <TextView
-        android:id="@+id/tx_see_all_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lihat_semua"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tx_task_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tx_task_title" />
+            <TextView
+                android:id="@+id/tx_see_all_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="@string/lihat_semua"
+                app:layout_constraintBottom_toBottomOf="@+id/tx_task_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tx_task_title" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_task"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/task_item_row"
-        app:layout_constraintTop_toBottomOf="@id/tx_task_title"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tx_task_title"
+                tools:listitem="@layout/task_item_row" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_task"
