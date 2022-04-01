@@ -1,4 +1,4 @@
-# Mantoo App
+# Mantoo App (Manajemen Waktoo)
 Mantoo is a simple android app for time management builded by Kotlin and Android Jetpack
 
 - [Kotlin](https://kotlinlang.org/) based, [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/) for asynchronous.
